@@ -1,7 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-st=input("Please enter the url of website\n")
-url = st
+url=input("Please enter the url of website\n") 
 r = requests.get(url)
 htmlContent = r.content
 #print(htmlContent)
@@ -11,6 +10,6 @@ anchors=soup.find_all('a')
 all_links = set()
 for link in anchors:
     if(link.get("href") != '#'):
-        link=st + link.get("href")
+        link=url + link.get("href")
         all_links.add(link)
         print(link)
