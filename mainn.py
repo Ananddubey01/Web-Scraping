@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 url=input("Please enter the url of website\n") 
 r = requests.get(url)
 htmlContent = r.content
-#print(htmlContent)
+#print(htmlContent) 
 soup = BeautifulSoup(htmlContent, 'html.parser')
 #print(soup.prettify)
 anchors=soup.find_all('a')
